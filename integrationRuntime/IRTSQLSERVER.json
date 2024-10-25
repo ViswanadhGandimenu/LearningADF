@@ -1,0 +1,10 @@
+{
+	"name": "IRTSQLSERVER",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Connecting to the on premise sql server database",
+		"typeProperties": {
+			"selfContainedInteractiveAuthoringEnabled": true
+		}
+	}
+}
