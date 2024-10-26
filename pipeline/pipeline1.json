@@ -13,9 +13,31 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "ADLSTOSqlServerSource",
+						"type": "DatasetReference"
+					}
+				}
 			}
 		],
+		"parameters": {
+			"Pl_Testing_parameter": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Databricks"
 		},

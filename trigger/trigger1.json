@@ -12,6 +12,15 @@
 				"parameters": {
 					"TableName": "FactInternetSales"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Pl_Testing_parameter": "testing"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
