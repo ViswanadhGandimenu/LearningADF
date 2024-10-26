@@ -36,6 +36,9 @@
 		"parameters": {
 			"Pl_Testing_parameter": {
 				"type": "string"
+			},
+			"Pl_testing2_parameter": {
+				"type": "string"
 			}
 		},
 		"folder": {
