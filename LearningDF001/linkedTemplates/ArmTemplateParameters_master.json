@@ -11,11 +11,17 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"AzureDatabricks_accessToken": {
+			"value": ""
+		},
 		"SqlServer1_password": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://learningstorageacc001.dfs.core.windows.net/"
+		},
+		"AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"value": "1027-062749-j9pmtyp6"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://Learning002.vault.azure.net/"
