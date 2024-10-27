@@ -502,7 +502,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"notebookPath": {
-											"value": "@concat('/Users/viswanadh.gandimenusnp.com/',item().NoteBooksName)",
+											"value": "@concat('/Users/viswanadh.gandimenu@snp.com/',item().NoteBooksName)",
 											"type": "Expression"
 										}
 									},
