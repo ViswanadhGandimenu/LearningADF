@@ -1,9 +1,10 @@
 {
-	"name": "pipeline1",
+	"name": "PL_Datawarehouse",
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "Lookup_Databricks_config_table",
+				"description": "This activity queries Databricks config table for getting notebook names to execute.",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -16,31 +17,49 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT *\nFROM dbo.Databricks_Configuration;",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "ADLSTOSqlServerSource",
+						"referenceName": "SqlServer_databricks_config_table",
 						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup_Databricks_config_table",
+						"dependencyConditions": [
+							"Completed"
+						]
 					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "Notebook1",
+							"type": "DatabricksNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": []
+						}
+					]
 				}
 			}
 		],
-		"parameters": {
-			"Pl_Testing_parameter": {
-				"type": "string"
-			},
-			"Pl_testing2_parameter": {
-				"type": "string"
-			}
-		},
 		"folder": {
 			"name": "Databricks"
 		},
