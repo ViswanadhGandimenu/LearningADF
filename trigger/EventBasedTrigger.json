@@ -1,0 +1,27 @@
+{
+	"name": "EventBasedTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"FileName": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/raw/blobs/eventtrigger/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/e4064061-8293-435f-8884-af457d1bed8a/resourceGroups/Learning/providers/Microsoft.Storage/storageAccounts/learningstorageacc001",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
