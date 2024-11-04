@@ -21,7 +21,7 @@
 			"value": "https://learningstorageacc001.dfs.core.windows.net/"
 		},
 		"AzureDatabricks_properties_typeProperties_existingClusterId": {
-			"value": "1027-062749-j9pmtyp6"
+			"value": "1027-142743-idpf42hh"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://Learning002.vault.azure.net/"
@@ -34,6 +34,12 @@
 		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"value": "sa"
+		},
+		"EventBasedTrigger_properties_pipeline1_parameters_FileName": {
+			"value": "@triggerBody().fileName"
+		},
+		"EventBasedTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/e4064061-8293-435f-8884-af457d1bed8a/resourceGroups/Learning/providers/Microsoft.Storage/storageAccounts/learningstorageacc001"
 		},
 		"trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName": {
 			"value": "FactInternetSales"

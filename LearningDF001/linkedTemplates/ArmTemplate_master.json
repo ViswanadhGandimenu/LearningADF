@@ -29,7 +29,7 @@
 		},
 		"AzureDatabricks_properties_typeProperties_existingClusterId": {
 			"type": "string",
-			"defaultValue": "1027-062749-j9pmtyp6"
+			"defaultValue": "1027-142743-idpf42hh"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
@@ -46,6 +46,14 @@
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "sa"
+		},
+		"EventBasedTrigger_properties_pipeline1_parameters_FileName": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
+		"EventBasedTrigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/e4064061-8293-435f-8884-af457d1bed8a/resourceGroups/Learning/providers/Microsoft.Storage/storageAccounts/learningstorageacc001"
 		},
 		"trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName": {
 			"type": "string",
@@ -107,6 +115,12 @@
 					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					},
+					"EventBasedTrigger_properties_pipeline1_parameters_FileName": {
+						"value": "[parameters('EventBasedTrigger_properties_pipeline1_parameters_FileName')]"
+					},
+					"EventBasedTrigger_properties_typeProperties_scope": {
+						"value": "[parameters('EventBasedTrigger_properties_typeProperties_scope')]"
 					}
 				}
 			},
