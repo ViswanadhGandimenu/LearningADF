@@ -1,0 +1,81 @@
+{
+	"name": "DS_EVentTriggerOutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "FactCallCenter1.csv",
+				"folderPath": "EventStroageOutput",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "1",
+				"type": "String"
+			},
+			{
+				"name": "20140501",
+				"type": "String"
+			},
+			{
+				"name": "weekday",
+				"type": "String"
+			},
+			{
+				"name": "AM",
+				"type": "String"
+			},
+			{
+				"name": "24",
+				"type": "String"
+			},
+			{
+				"name": "7",
+				"type": "String"
+			},
+			{
+				"name": "9",
+				"type": "String"
+			},
+			{
+				"name": "405",
+				"type": "String"
+			},
+			{
+				"name": "283",
+				"type": "String"
+			},
+			{
+				"name": "341",
+				"type": "String"
+			},
+			{
+				"name": "210",
+				"type": "String"
+			},
+			{
+				"name": "79",
+				"type": "String"
+			},
+			{
+				"name": "3.00E-02",
+				"type": "String"
+			},
+			{
+				"name": "2014-05-01 00:00:00",
+				"type": "String"
+			}
+		]
+	}
+}
