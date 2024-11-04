@@ -6,10 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "LearningDF001"
-		},
-		"trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName": {
-			"type": "string",
-			"defaultValue": "FactInternetSales"
 		}
 	},
 	"variables": {
@@ -1026,44 +1022,12 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "SQLServer_To_StorageAccount",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"TableName": "[parameters('trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName')]"
-						}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 15,
-						"startTime": "2024-10-24T11:07:00",
-						"timeZone": "India Standard Time"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/SQLServer_To_StorageAccount')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/trigger2')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {

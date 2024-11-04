@@ -55,10 +55,6 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/e4064061-8293-435f-8884-af457d1bed8a/resourceGroups/Learning/providers/Microsoft.Storage/storageAccounts/learningstorageacc001"
 		},
-		"trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName": {
-			"type": "string",
-			"defaultValue": "FactInternetSales"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -139,9 +135,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName": {
-						"value": "[parameters('trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName')]"
 					}
 				}
 			},

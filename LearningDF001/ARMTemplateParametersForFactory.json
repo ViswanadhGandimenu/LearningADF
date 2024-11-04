@@ -40,9 +40,6 @@
 		},
 		"EventBasedTrigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/e4064061-8293-435f-8884-af457d1bed8a/resourceGroups/Learning/providers/Microsoft.Storage/storageAccounts/learningstorageacc001"
-		},
-		"trigger1_properties_SQLServer_To_StorageAccount_parameters_TableName": {
-			"value": "FactInternetSales"
 		}
 	}
 }
