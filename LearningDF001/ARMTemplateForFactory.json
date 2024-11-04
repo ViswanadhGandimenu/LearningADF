@@ -860,7 +860,26 @@
 						"typeProperties": {
 							"variableName": "FileType",
 							"value": {
-								"value": "@pipeline().parameters.FileName",
+								"value": "@replace(pipeline().parameters.FileName,'Sales','')",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "If Condition1",
+						"type": "IfCondition",
+						"dependsOn": [
+							{
+								"activity": "Set variable1",
+								"dependencyConditions": [
+									"Completed"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"expression": {
+								"value": "@equals(variables('FileType'),'Hourly')",
 								"type": "Expression"
 							}
 						}
@@ -1964,19 +1983,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/IRTSQLSERVER')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"description": "Connecting to the on premise sql server database",
-				"typeProperties": {
-					"selfContainedInteractiveAuthoringEnabled": true
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/EventBasedTrigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -2037,6 +2043,19 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/PL_Datawarehouse')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/IRTSQLSERVER')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "Connecting to the on premise sql server database",
+				"typeProperties": {
+					"selfContainedInteractiveAuthoringEnabled": true
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
