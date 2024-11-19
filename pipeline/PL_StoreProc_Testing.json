@@ -1,5 +1,5 @@
 {
-	"name": "pipeline2",
+	"name": "PL_StoreProc_Testing",
 	"properties": {
 		"activities": [
 			{
@@ -14,6 +14,19 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[Integration].[GetCityUpdates]",
+					"storedProcedureParameters": {
+						"LastCutoff": {
+							"value": "2013-01-01 00:00:00.0000000",
+							"type": "Datetime"
+						},
+						"NewCutoff": {
+							"value": "2022-10-07 21:11:44.8930093",
+							"type": "Datetime"
+						}
+					}
+				},
 				"linkedServiceName": {
 					"referenceName": "SqlServer1",
 					"type": "LinkedServiceReference"
