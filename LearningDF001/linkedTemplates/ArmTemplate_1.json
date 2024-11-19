@@ -13,6 +13,98 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/FactCallCenter_Destination')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "SqlServer1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Learning"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "FactCallCenterID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "DateKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "WageType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Shift",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LevelOneOperators",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "LevelTwoOperators",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "TotalOperators",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "Calls",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "AutomaticResponses",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Orders",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "IssuesRaised",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "AverageTimePerIssue",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "ServiceGrade",
+						"type": "float",
+						"precision": 15
+					},
+					{
+						"name": "Date",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "FactCallCenter"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/FactInternetSales_Destination')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -535,6 +627,7 @@
 				"lastPublishTime": "2024-10-24T13:49:47Z"
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/FactCallCenter_Destination')]",
 				"[concat(variables('factoryId'), '/datasets/FactInternetSales_Destination')]"
 			]
 		},

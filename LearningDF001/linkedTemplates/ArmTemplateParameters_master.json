@@ -30,7 +30,7 @@
 			"value": "SNP-HYD-LPT-031\\SQLEXPRESS"
 		},
 		"SqlServer1_properties_typeProperties_database": {
-			"value": "AdventureWorksDW2019"
+			"value": "WideWorldImporters"
 		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"value": "sa"

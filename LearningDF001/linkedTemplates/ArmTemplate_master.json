@@ -41,7 +41,7 @@
 		},
 		"SqlServer1_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "AdventureWorksDW2019"
+			"defaultValue": "WideWorldImporters"
 		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
