@@ -1,0 +1,18 @@
+{
+	"name": "AzureSqlDatabase1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "g6p36mcq2v4erfeucbawk3fpe4-nm3eadlhs7zudaziyvxadpxwy4.datawarehouse.fabric.microsoft.com",
+			"database": "LH_OneLakeAccessCheck_AR",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "ServicePrincipal",
+			"servicePrincipalId": "f64e0b1c-1b5c-43ea-a002-92962ea401e5",
+			"tenant": "30bf9f37-d550-4878-9494-1041656caf27",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDAxRkZFMEVGLTlFMEYtNDRFMi04RUNCLThBRDQ0MTMyREI4Nl8zMmM1ODZiZi1hNTU0LTRlZDUtODJmYS0zYWU2YmMyMjAwNmIiDQp9"
+		}
+	}
+}
